@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="http://chefstore.vn/skin/default/css/jquery.lightbox-0.5.css" />
+<script type="text/javascript" src="http://chefstore.vn/skin/default/js/jquery.lightbox-0.5.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#forbaby_newcontent img").each(function(){
+        img = $(this).attr('src');
+        $(this).wrap('<a href="'+img+'" class="lightbox" />');
+    })
+    
+    $('#forbaby_newcontent .lightbox').lightBox();
+})
+</script>
+
+<div class="story component" id="forbaby_newcontent">
+	<div class="new-pathway">
+		<div class="path-navi">
+			<a href="http://chefstore.vn/">Trang chủ</a>
+			<span>&nbsp&nbsp|&nbsp&nbsp</span>
+			<a href="">Tin tức</a>
+		</div>
+		
+	</div>
+	<h1 class="new-title"></h1>
+	<!-- 
+	<p class="new-date"></p>
+	 -->
+    <p></p>
+</div>
+<!-- 
+<div class="fb-comments" data-href="" data-num-posts="2" data-width="700"></div>
+ -->
+<ul class="news" style="display: ;">
+	<h3>Tin tức khác</h3>
+    
+</ul>

@@ -1,0 +1,422 @@
+*{
+			outline: 0;
+		}
+		body{
+			margin: 0px;
+			padding: 0px 5px;
+			font-family: Arial, sans-serif;
+			font-size: 12px;
+		}
+		
+		textarea{
+			width: 100%;
+		}
+		input[type='text'],input[type='password']{
+			width: 250px;
+		}
+		
+		table {
+			border: 0px;
+			border-collapse: collapse;
+			empty-cells: show;
+		}
+		a{
+			text-decoration: none;
+			color: #00c;
+		}
+		
+		a:hover {
+			text-decoration: underline;
+		}
+		img{
+			border: 0px;
+		}
+		
+		div, span, td {
+			font-size: 12px;
+		}
+		
+		.right-text {
+			text-align: right;
+		}
+		
+		.center-text {
+			text-align: center;
+		}
+		
+		.left-text {
+			text-align: left;
+		}
+		
+		.content{
+			padding-top: 5px;
+			padding-left: 10px;
+			padding-right: 0px;
+		}
+		.menu{
+			font-family: arial;
+			font-size: 12px;
+			border-right: 3px #EBEFF9 solid;
+			margin: 0px;
+			padding: 0px;
+			white-space: nowrap;
+		}
+		
+		.menu a:hover {
+			color: #ff0000;
+			text-decoration: none;
+		}
+		
+		.menu ol {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			margin-left: 10px;
+		}
+		
+		.menu ol li {
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		.menu ol li a.mnu_select {
+			background-color: #EBEFF9;
+			color: #444;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		.menu ol li a {
+			display: block;
+			color: #00c;
+			font-size: 12px;
+			font-family: arial;
+			padding: 5px 0px 5px 17px;
+		}
+		
+		.menu ol li.parent_menu {
+			background: url(../images/plus_sm.gif) no-repeat 0px 5px;
+		}
+		
+		.menu ol li.parent_selected {
+			background: url(../images/minus_sm.gif) no-repeat 0px 5px;
+		}
+		
+		.menu ol li.parent_menu ul {
+			display: none;
+			list-style: none;
+			padding-left: 7px;
+		}
+		.menu ol li.parent_selected ul {
+			display: block !important;
+			list-style: none;
+			padding-left: 7px;
+		}
+		
+		.menu ol li.parent_menu ul li a,
+		.menu ol li.parent_selected ul li a
+		{
+			padding-left: 17px;
+		}
+		
+		.pnInput{
+			background-color:#eee;
+		}
+		.iconedit{
+			padding-left: 20px;
+			background: url(../images/iconedit.gif) no-repeat top left;
+		}
+		.icondel{
+			padding-left: 20px;
+			background: url(../images/delete_icon.png) no-repeat;
+			color:#ff0000;
+		}
+		.optSelected{
+			background-color:#225599;
+			color:#FFF;
+		}
+		
+		.toolbar{
+			position: relative;
+		}
+		
+		.pagination{
+			position: absolute;
+			right: 10px;
+			top: 2px;
+		}
+		
+		
+		.active-link {
+			color: green;
+		}
+		
+		.unactive-link {
+			color: red;
+		}
+		
+		.rich td{
+			background-color: #eee;
+		}
+
+em.error {
+	font-style:italic;
+	margin-left:5px;
+	padding-left: 10px;
+	color:red;
+	background:url(../images/arrow_to_left.gif) no-repeat center left;
+}
+em.success {
+	margin-left:5px;
+	font-style:normal;
+	color:green;
+	background:none;
+}
+.green {
+	color: green;
+}
+
+.orange {
+	color: #ff6600;
+}
+
+.blue {
+	color: #1989cc;
+}
+
+.red {
+	color: #ff0000;
+}
+#logo h1 {
+	margin: 10px 0px;
+	padding: 5px 30px;
+	background-color: #fff;
+	text-shadow: 1px 1px 1px #f4f4f4;
+	font-size: 24px;
+	font-weight: bold;
+	color: #225599;
+}
+
+#logo:hover {
+	text-decoration: none;
+}
+
+.quick_menu {
+	background-color: #EBEFF9;
+	border-top: 1px #6B90DA solid;
+	text-align: right;
+	padding: 5px 10px;
+	margin-bottom: 20px;
+}
+
+.quick_menu a {
+	margin: 0px 10px;
+	color: #00c;
+}
+
+.quick_menu a:hover {
+	color: #f00;
+}
+
+/* style */
+
+.main-table {
+	width: 100%;
+}
+
+.entity-column {
+	margin-right: 2em;
+}
+
+.main-column {
+	padding: 0.1em;
+	vertical-align: top;
+	width: 50%;
+}
+
+h2.broad-title {
+	margin: 0px;
+	font-size: 1.5em;
+	padding-bottom: 0.5em;
+	text-transform: capitalize;
+}
+
+h3.panel-title {
+	background-color: #EBEFF9;
+	font-weight: bold;
+	width: 100%;
+	font-size: 12px;
+	padding: 0.5em;
+	margin: 0px;
+}
+
+.grid-body {
+	padding: 0.5em;
+}
+
+table.table-item {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+table.table-item th {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	white-space: nowrap;
+	padding-bottom: 5px;
+}
+
+table.table-item td {
+	border-bottom: 1px solid #EBEFF9;
+	padding: 0.3em;
+	font-size: 12px;
+	padding-left: 0px;
+}
+
+.broad-more {
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+td.count {
+	width: 5px;
+	text-align: right;
+}
+
+td.number {
+	text-align: right;
+}
+
+
+
+
+
+.table-stat {
+	border: 1px #ccc solid;
+	font-size: 12px;
+	margin: 20px 0px;
+	padding: 5px 10px;
+	line-height: 20px;
+}
+
+.table-stat h1 {
+	font-size: 1.5em;
+	margin: 0px;
+	display: inline;
+}
+
+.top_bar {
+	position: relative;
+}
+
+.show_by {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.table-list {
+	margin-top: 10px;
+}
+
+.table-list table {
+	width: 100%;
+}
+
+.table-list th {
+	background-color: #EBEFF9;
+	font-size: 12px;
+	padding: 3px;
+	text-align: left;
+}
+
+.table-list table td {
+	border-bottom: 1px solid #EBEFF9;
+	padding: 0.3em;
+	font-size: 12px;
+	padding-left: 0px;
+	padding-right: 30px;
+}
+
+.table-list input[type="text"], .table-list input[type="password"]{
+	border: 1px #EBEFF9 inset;
+}
+
+td.check {
+	width: 40px;
+}
+
+.bottom_bar {
+	background-color: #EBEFF9;
+	position: relative;
+	padding: 3px 0px;
+	display: block;
+	height: 25px;
+}
+
+.pagination-right {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: #666;
+}
+
+.check-cols {
+	width: 10px;
+}
+
+img.image_review {
+	border: 1px #ccc solid;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+.add-bar {
+	background-color: #EBEFF9;
+	border-bottom: 1px solid #6B90DA;
+	padding: 10px 0px 3px 10px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.add-bar span {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 3px 10px;
+	background-color: white;
+	border-color: #6B90DA #6B90DA white;
+	border-style: solid;
+	border-width: 1px 1px 2px;
+}
+
+.table-form {
+	padding: 20px;
+}
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+
+.main_content_panel {
+	padding-bottom: 300px;
+}
+
+.wrap_pimages{
+    display: block;
+    float: left;
+    margin: 2px;
+    width: 50px;
+    position: relative;
+}
+
+.images_close{
+    position: absolute;
+    top: -7px;
+    right:-6px;
+    cursor: pointer;
+}
+
+.pin{display:block; position:fixed !important; top:0 !important; left:auto !important; z-index:1000; width: 100%;}

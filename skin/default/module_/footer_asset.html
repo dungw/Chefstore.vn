@@ -1,0 +1,54 @@
+<!-- BEGIN: main -->
+<div class="wrap-footer asset clearfix">
+	<ul class="footer-intro">
+        <li><h4>Về Chefstore</h4></li>
+        <!-- BEGIN: guide -->
+        <li><a href="{guide_link}">{guide_title}</a></li>
+        <!-- END: guide -->
+        <li><a href="">Giới thiệu</a></li>
+        <li><a href="">Điều khoản sử dụng</a></li>
+        <li><a href="">Chính sách bảo mật</a></li>
+    </ul>
+    <ul class="first">
+        <li><h4>Danh mục sản phẩm</h4></li>
+        <!-- BEGIN: cat -->
+        <li><a href="{cat_link}">{cat_name}</a></li>
+        <!-- END: cat -->
+    </ul>
+    <ul>
+        <li><h4>Liên hệ</h4></li>
+        <li><a>Địa chỉ: {address}</a></li>
+        <li><a>Tel: {phone}</a></li>
+        <li><a>Fax: {fax}</a></li>
+        <li><a>Website: http://www.chefstore.vn</a></li>
+        <li><a>Email: {email}</a></li>
+        
+    </ul>
+    <ul class="last subscribe">
+        <li><h3 class="h3-title">Đăng ký nhận email khuyến mãi</h3></li>
+        <form method="post" action="ajax.php" name="signup" id="form">
+        <label for="name" class="error" id="alert_email_msg" style="display: none;">Bạn chưa nhập Email</label>
+        <li>
+        	<input type="text" class="reg-email" id="register_email" placeholder="Nhập email của bạn vào đây ..." />
+        	<input type="button" class="reg-submit" value="" onclick="_register_email()" />
+        </li>
+        </form>
+        <li>
+        	<div class="wrap-connect">
+        		<h3 class="h3-title" style="float: left;padding-right: 5px;">Kết nối với chúng tôi: </h3>
+	        	<div style="float: left;">
+	        		<a class="con newfb" href=""></a>
+		        	<a class="con newtwitter" href=""></a>
+		        	<a class="con newgoogle" href=""></a>
+	        		<a class="con newrss" href=""></a>
+	        	</div>
+       		</div>
+        </li>
+        <li>
+        	<span class="copyright">Copyright(c) 2013 Chefstore.vn. All right reserved.</span><br>
+        	<span class="copyright" style="display: none;">Powered by Microbiz.vn - <a style="color: #004B91;" href="http://microbiz.vn">Giúp bạn tăng doanh thu</a></span>
+        </li>
+    </ul>
+</div>
+
+<!-- END: main -->

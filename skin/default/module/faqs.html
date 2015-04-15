@@ -1,0 +1,72 @@
+<!-- BEGIN: main -->
+<div class="pod clearfix">
+    <h2>Hỏi đáp nhanh</h2>
+    <label for="name">Họ tên:</label>
+    <input type="text" name="faqs_username" id="faqs_username" value="" />
+    <textarea id="faqs_content" onblur="this.value=(this.value=='') ? 'Câu hỏi của bạn...' : this.value;" onfocus="this.value=(this.value=='Câu hỏi của bạn...') ? '' : this.value;">Câu hỏi của bạn...</textarea>
+    <div>
+        <p style="color: #999999; font-size: 11px;" id="faqs_msg">Nhập mã bảo vệ bên dưới:</p>
+        <img style="margin-top: 5px; float: left" id="captcha" src="{link_home}captcha.php?width=50&amp;height=23&amp;characters=3" />
+        <a title="Chọn hình mới" style="margin: 10px 5px;" href="javascript: reloadCapcha('captcha')"><img id="reload-captcha" src="{skin_path}img/reload.gif" /></a>
+        <input type="text" style="padding: 2px; width:74px;margin: 5px 0px;" value="" id="faqs_captcha" />
+        <input type="button" name="submit" value="Gửi" style="padding: 2px; width:50px; width:50px; margin: 5px 0px;" onclick="sendFaqs()" />
+    </div>
+    
+    <div class="clearfix"></div>
+    <div id="wrapfaqs">
+    {html}
+    {pagging}
+    </div>
+</div>    
+<style>
+#faqs_username{
+    width: 164px;
+}
+
+#faqs_content{
+    width: 100%;
+    color: #999999;
+    font-size: 11px;
+    margin-top: 3px !important;
+}
+</style>
+<script type="text/javascript">
+function sendFaqs(){
+    $.ajax({            
+        url : base_url + "ajax.php?cmd=faqs",
+        type : "POST",
+        data : {                       
+            faqs_username: $("#faqs_username").val(),
+            faqs_content: $("#faqs_content").val(),
+            faqs_captcha: $("#faqs_captcha").val(),
+        },
+        beforeSend : function(xhr){
+            $("#faqs_msg").html('Đang gửi...');
+        },                
+        timeout : 10000,            
+        success : function(response, status){		    
+            switch(response){                              
+                case "EMPTY_USERNAME":
+                    $("#faqs_msg").html('Mời nhập họ tên').css('color','red');
+                break;
+                case "EMPTY_CONTENT":
+                    $("#faqs_msg").html('Mời nhập nội dung').css('color','red');    
+                break; 
+                case "WRONG_CAPCHA":
+                    $("#faqs_msg").html('Sai mã bảo vệ').css('color','red');    
+                break;                                        
+                case "SUCSESS":
+                    _html = '<li class="odd question"><span><b>'+ $("#faqs_username").val()+'</b> <em>(vài giây trước)</em></span><p><span class="question_text">Q:&nbsp;</span>'+$("#faqs_content").val()+'</p></li>';
+                    $("#faqs").prepend(_html);
+                    $("#faqs_msg").html('Gửi xong...').css('color','red');
+                    $("#faqs_username").val('');
+                    $("#faqs_content").val('');
+                    $("#faqs_captcha").val('');
+                    reloadCapcha('captcha');
+                break; 
+            }
+        }
+    });
+}
+</script>
+<!-- END: main -->

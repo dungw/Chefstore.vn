@@ -1,0 +1,54 @@
+<!-- BEGIN: main -->
+<div class="container clearfix">
+	<!--begin essential-->
+    <div class="essential clearfix">
+    	{html_none}
+        <!--begin cart-->
+        <form name="shoppingCart" method="post" action="ajax.php" {style}>
+            <input type="hidden" name="cmd" value="update_cart" />
+            <h1>Giỏ hàng của bạn</h1>
+            <p>Nếu bạn cần trợ giúp về đặt mua hàng. Xin vui lòng gọi tới số điện thoại {hotline1} (Hỗ trợ 24/7)</p>
+            <table width="100" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <th class="col1">STT</th>
+                        <th class="col2">Thông tin sản phẩm</th>
+                        <th class="col3">Đơn giá</th>
+                        <th class="col4">Số lượng</th>
+                        <th class="col5">Tổng tiền</th>
+                        <th class="col6">Điều chỉnh</th>
+                    </tr>
+                    <!-- BEGIN: cart -->
+                    <tr id="product_cart_{id}">
+                        <td class="col1">{stt}</td>
+                        <td class="col2">
+                            <a href="{product_link}"><img alt="{product_name}" src="{product_thumb}" title="{product_name}" /></a>
+                            <p>{product_name}</p>
+                        </td>
+                        <td class="col3">{product_price} {product_type}</td>
+                        <td class="col4">
+                            <input type="hidden" value="{id}" name="pid[]" />
+                            <input type="text" value="{product_num}" name="num[]" />
+                        </td>
+                        <td class="col5">{product_total_price}</td>
+                        <td class="col6"><a href="javascript:void(0)" class="remove" onclick="deleteProductCart({id})">Huỷ bỏ</a></td>
+                    </tr>
+                    <!-- END: cart -->
+                    <tr class="total">
+                        <td class="sub" colspan="4">Tổng cộng tiền hàng</td>
+                        <td colspan="2"><b>{total_cart_price}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right" colspan="6">
+                            <input type="submit" class="upcart" title="Update Cart" value="Cập nhật giỏ hàng" />
+                            <input type="button" class="submit" title="Order" value="Đặt mua hàng" onclick="_redirect_order()" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <!--end cart-->
+    </div>
+    <!--end essential-->
+</div>
+<!-- END: main -->

@@ -1,0 +1,43 @@
+<!-- BEGIN: main -->
+<div class="wrap-our-category pod clearfix">
+    <h3 class="our-category">Giới thiệu</h3>
+    <ul class="menu-category">
+        <li class="clearfix">
+            <a class="" href="">Chiến lược</a>
+        </li>
+        <li class="clearfix">
+            <a class="" href="">Văn hóa Chefstore</a>
+        </li>
+        <li class="clearfix">
+            <a class="" href="">Thư viện ảnh</a>
+        </li>
+    </ul>
+</div>
+<div class="menu-item">
+	<a href="">Dịch vụ</a>
+</div>
+<div class="menu-item">
+	<a href="">Dự án</a>
+</div>
+<div class="menu-item">
+	<a href="">Đối tác</a>
+</div>
+<div class="menu-item">
+	<a href="{link_new}">Tin tức</a>
+</div>
+<div class="menu-item">
+	<a href="{link_contact}">Liên hệ</a>
+</div>
+
+<!-- END: main -->
+
+
+
+
+
+
+
+
+
+
+

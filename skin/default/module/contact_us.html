@@ -1,0 +1,120 @@
+<!-- BEGIN: main -->
+<script type="text/javascript" src="{skin_path}js/jquery.validate.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery("#form").validate({
+    	onsubmit: true,
+        rules: {
+        	name: {
+                required: true
+            },
+            email: {
+            	required: true,
+                email: true
+            },
+            address: {
+                required: true
+            },
+            phone: {
+                required: true
+            }
+        },
+        messages: {
+        	name: {
+                required: "Bạn chưa điền họ tên"
+            },
+            email: {
+            	required: "Bạn chưa điền email",
+                email: "Email chưa đúng định dạng"
+            },
+            address: {
+                required: "Bạn chưa điền địa chỉ"
+            },
+            phone: {
+                required: "Bạn chưa điền số điện thoại"
+            }
+        }
+    });
+});
+</script>
+
+<div class="story component">
+	
+	<div class="new-pathway">
+		<!-- 
+		<div class="path-navi">
+			<a href="{link_home}">Home</a>
+			<span>&nbsp&nbsp|&nbsp&nbsp</span>
+			<a href="">Liên hệ</a>
+		</div>
+		 -->
+		<h1 class="cate-name">
+			<a href="javascript:void(0)">{lb_contact}</a>
+		</h1>
+	</div>
+	
+    <p>{address}</p>
+    <p>Hotline: {hotline}</p>
+    <p>Website: http://www.chefstore.vn</p>
+    <p>Email: {email}</p>
+    <h3>{lb_send_us_infomation}</h3>
+    <!-- 
+    <p>Chúng tôi đánh giá cao thông tin phản hồi của bạn! Mục tiêu của chúng tôi là tiếp tục cải thiện "<a href="{link_home}">dex.vn</a>" dựa trên những ý kiến đóng góp của bạn. Xin vui lòng cho chúng tôi biết những đánh giá của bạn để chúng tôi có thể phục vụ bạn tốt hơn. Xin chân thành cảm ơn!</p>
+     -->
+    <!--begin form-->
+    <form id="form" name="contact" method="post" action="{link_home}ajax.php">
+        <input type="hidden" name="cmd" value="contact" />
+    	<fieldset>
+            {sucsess}
+            <table width="100%">
+            	<tr>
+            		<td width="80">
+            			<label for="name">{lb_fullname}:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required" name="fulname" id="fulname" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="phone">{lb_phone}:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required number" name="phone" id="phone" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="email">Email:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required email" name="email" id="email" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="add">{lb_address}:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" placeholder="{lb_ex_address}" class="input required add" name="address" id="address" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td></td>
+            		<td>
+            			<textarea placeholder="{lb_message_with_us}" name="content" rows="8" cols="97"></textarea>
+            		</td>
+            	</tr>
+            	<tr>
+            		<td></td>
+            		<td class="last" align="left" colspan="1">
+            			<span><font color="red">*</font>&nbsp{lb_necess_info}</span>
+            			<input type="submit" class="new-submit-{lang}" value="" />
+           			</td>
+            	</tr>
+            </table>
+        </fieldset>
+    </form>
+    <!--end form-->
+</div>
+<!-- END: main -->

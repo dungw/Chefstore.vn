@@ -1,0 +1,9 @@
+﻿
+/*specifications*/
+/*.PSC1{}*/
+.PSC2 { width:456px;line-height:145%; }
+.PSC2 .ROW {clear: both;overflow:initial !important; }
+.PSC2 .ROW div{ width:222px;margin:2px 2px 0 0;padding:2px;background-color:#F1F1F1; }
+.ROW { width: 456px; }
+.ROW .Fr { float: right; }
+.ROW .Fl { float: left; }

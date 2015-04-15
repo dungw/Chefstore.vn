@@ -1,0 +1,15 @@
+@charset "utf-8";
+/*////////////////////Reset Browser Inherited Styles/////////////////////*/
+html, body{ margin:0; padding:0; color:#333; font-family:Arial,Helmet,Freesans,sans-serif; font-size:12px; text-align:center; line-height:150%;}
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{border:0 none; font-size:100%; outline:0 none; padding:0; vertical-align:baseline;}
+body{ background:#F9F9F9;}
+a{color:#004B91; text-decoration:none;}
+a:hover{ color:#E47911; text-decoration:underline;}
+img{border:0 none;}
+*{margin:0;	padding:0; list-style:none;}
+h2{ font-size:16px;}
+/*////////////////////Default Styles/////////////////////////////////////*/
+input, select{color:#333; font-family:Arial,Helvetica,sans-serif; font-size:100%; outline:none;}
+blockquote{margin:10px 0; padding:5px; border:1px solid #dcdcdc; background:#f8f8f8;}
+table{ width:100%; border-collapse:collapse; border-spacing:0;}
+.yellow{color:#E47911;}

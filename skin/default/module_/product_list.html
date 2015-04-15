@@ -1,0 +1,26 @@
+<!-- BEGIN: main -->
+
+	<!-- BEGIN: category -->
+	<div class="component">
+	    <a href="{category_link}" class="more"><span>Xem thêm</span></a>
+	    <h2><a href="{category_link}">{category_name}</a></h2>
+	    <!--begin row-->
+	    <ul class="grid first clearfix">
+	        <!-- BEGIN: product -->        
+	        <li {style_class} align="center">
+	            {product_type_html}
+	            <a href="{product_link}">
+	                <img src="{product_thumb}" alt="{product_name}" />
+	                <span>{product_name}</span>
+	            </a>
+	            <!-- 
+	            <span class="price">Giá: <b>{product_price}</b></span>
+	             -->
+	        </li>
+	        <!-- END: product -->
+	    </ul>
+	    <!--end row-->
+	</div>
+	<!-- END: category -->
+	
+<!-- END: main -->

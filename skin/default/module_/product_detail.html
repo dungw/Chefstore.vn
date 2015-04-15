@@ -1,0 +1,274 @@
+<!-- BEGIN: main -->
+
+<script type="text/javascript" src="{skin_path}js/jquery.lightbox-0.5.min.js"></script></script>
+<link rel="stylesheet" type="text/css" href="{skin_path}css/jquery.lightbox-0.5.css" media="screen" />
+
+<script type="text/javascript">
+$(function(){
+    $('a.lightbox').lightBox();
+})
+</script>
+<style>
+#zoom{cursor:url(http://l.yimg.com/g/images/cursor-zoom.png),-moz-zoom-in;*cursor:url(http://l.yimg.com/g/images/cursor-zoom.png)}
+</style>
+<div class="container clearfix">
+	
+	<div class="new-pathway">
+		<!--
+		<div class="path-navi">
+			<a href="{link_home}">Home</a>
+			<span>&nbsp&nbsp|&nbsp&nbsp</span>
+			<a href="">{name}</a>
+		</div>
+		-->
+		<h1 class="cate-name">
+			<a href="javascript:void(0)">{name}</a>
+		</h1>
+	</div>
+	
+	<!--begin essential form-->
+    <form class="essential clearfix" method="get" action="{link_home}ajax.php">
+        <input type="hidden" name="cmd" value="buynow" />
+        <input type="hidden" name="pid" value="{id}" />
+    	
+        <div class="overview">
+            <div class="size300">
+                <a href="{images}" class="large lightbox" id="zoom" rel="adjustX:20, adjustY:0">
+                    <img src="{images}" alt="{name}" />
+                </a>
+            </div>
+            <div class="size50">
+                <!-- BEGIN: images -->
+                <a href="{img_full}" class="galler" rel="useZoom: 'zoom', smallImage: '{img_full}' ">
+                    <img src="{thumb50}" alt="{name}" />
+                </a>
+                <!-- END: images -->
+            </div>
+        </div>
+        
+        <!--begin details-->
+        <div class="details">
+        	<!-- 
+        	<h1>{name}</h1>
+        	 -->
+            <ul>
+                <li style="display: {dpl_product_code};"><em>Mã sản phẩm: </em><h2 style="display: inline-block; font-size: inherit">{product_code}</h2></li>
+            	<li><em style="width: 50px !important;">Giá bán: </em><span class="{class_price}">Call </span></li>
+                <li style="display: {dpl_km};"><em>Giá khuyến mãi: </em><span class="price">{price_promotion} VNĐ</span> <em style="color: blue; width: 100px"> (Giảm: {persent_off}%)</em></li>
+                {thuonghieu}
+                {nhaphanphoi}
+                {made}
+                <!-- <li><em>Trong kho: </em><span>{in_stock}</span></li> -->
+                <!--                
+                <li><em>Bảo hành</em><span>{warranty}</span></li>                
+                
+                <li><em>Hãng sản xuất: </em><h2 style="display: inline-block; font-size: inherit">{manufacturer}</a></h2></li>
+                -->
+                <li class="li">
+                	<input type="submit" class="buynow" title="Buy Now" value="" />
+               	</li>
+               	<li class="btop">
+               		<b>Hỗ trợ mua hàng:</b>&nbsp;&nbsp;
+               		<a class="ym yahoo" href="ymsgr:SendIM?{yahoo1}&m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}">{name_yahoo1}</a>
+               		<a class="ym yahoo" href="ymsgr:SendIM?{yahoo1}&m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}">{name_yahoo2}</a>
+               		<a class="ym skype" href="skype:{skype1}?chat">{name_skype1}</a>
+               		<a class="ym skype" href="skype:{skype1}?chat">{name_skype1}</a>
+               	</li>
+               	<li class="bbot">
+               		<b>Liên hệ đặt hàng:</b>&nbsp;&nbsp;&nbsp;
+               		{hotline}
+               	</li>
+                
+                <!--
+                {other_info}
+                <li><h3>Hỗ trợ trực tuyến</h3></li>
+                <li>
+                    <em>Seller01</em>
+                    <a class="yahoo" href="ymsgr:SendIM?{yahoo1}&m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}"><img src="{skin_path}img/yahoo.gif" title="{name_yahoo1}" /></a>
+                    <a class="skype" href="skype:{skype1}?chat"><img src="{skin_path}img/skype.gif" title="{name_skype1}" /></a>
+                    <b class="phone">{phone1}</b>
+                </li>
+                <li>
+                    <em>Seller02</em>
+                    <a class="yahoo" href="ymsgr:SendIM?{yahoo2}&m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}"><img src="{skin_path}img/yahoo.gif" title="{name_yahoo2}" /></a>
+                    <a class="skype" href="skype:{skype2}?chat?chat"><img src="{skin_path}img/skype.gif" title="{name_skype2}" /></a>
+                    <b class="phone">{phone2}</b>
+                </li>
+                <li>
+                    <em>Seller03</em>
+                    <a class="yahoo" href="ymsgr:SendIM?{yahoo3}&m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}"><img src="{skin_path}img/yahoo.gif" title="{name_yahoo3}" /></a>
+                    <a class="skype" href="skype:{skype3}?chat"><img src="{skin_path}img/skype.gif" title="{name_skype3}" /></a>
+                    <b class="phone">{phone3}</b>
+                </li>
+                -->
+                <li>
+                	<b>Chia sẻ thông tin:</b>&nbsp;&nbsp;
+                	<span class='st_facebook'></span>
+                    <span class='st_googleplus'></span>
+                    <span class='st_twitter'></span>
+                    <span class='st_pinterest'></span>
+               	</li>
+                <style>
+                .stButton .stMainServices img, .stButton img{
+                    z-index: -1 !important;
+                }
+				.stButton .stMainServices img, .stButton img{
+					z-index: 000 !important;
+				}
+                </style>
+				<script type="text/javascript">var switchTo5x=false;</script>
+				<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+				<script type="text/javascript">stLight.options({publisher: "843e8bf9-596b-4f8d-a6a7-6d19a64a2e72"}); </script>
+
+                <li>
+                	
+                </li>
+            </ul>
+            
+           	<!--begin cart
+	        <div class="cart">
+	            <ul>
+	                <li><label for="numbers">Số lượng</label>
+	                    <select id="numbers" name="number">
+	                        <option>1</option>
+	                        <option>2</option>
+	                        <option>3</option>
+	                        <option>4</option>
+	                        <option>5</option>
+	                    </select>
+	                </li>
+	                
+	                <li>
+	                	<h4>Liên hệ đặt hàng</h4>
+	                    <span>{hotline}</span>
+	                </li>
+	                <li>
+	                	<a href="ymsgr:SendIM?{yahoo1}?m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}" class="yahoo"><img title="{name_yahoo1}" src="{skin_path}img/yahoo.gif" /> {name_yahoo1}</a>
+	                    <a href="skype:{skype1}?chat" class="skype"><img title="{name_skype1}" src="{skin_path}img/skype.gif" /> {name_skype1}</a>
+	                </li>
+	                <li>
+	                    <a href="ymsgr:SendIM?{yahoo2}?m=Xin chào tôi muốn hỏi về sản phẩm {cur_page}" class="yahoo"><img title="{name_yahoo2}" src="{skin_path}img/yahoo.gif" /> {name_yahoo2}</a>
+	                    <a href="skype:{skype2}?chat" class="skype"><img title="{name_skype2}" src="{skin_path}img/skype.gif" /> {name_skype2}</a>
+	                </li>
+	                <!--
+	                <li><input type="button" class="addtocart" title="Add to Cart" value="" /></li>
+	                
+	            </ul>
+	            <ul class="mtop">
+	                <li class="li">+ <a href="{link_help_dathang}">Trợ giúp đặt hàng</a></li>
+	                <li>+ <a href="{link_help_thanhtoan}">Trợ giúp thanh toán</a></li>
+	            </ul>
+	        </div>
+	        -->
+	        <!--end cart-->
+        </div>
+        <!--en details-->
+		<!--begin primary content-->
+	    <div id="primary_content">
+	    	<!--begin tabbar-->
+	        <ul class="tabbar clearfix">
+	        	<li><a href="#featured-1" class="active">Mô tả chi tiết</a></li>
+	            <li><a href="#featured-2">Thông số kỹ thuật</a></li>
+	            <!-- 
+	            <li><a href="#featured-3">Đánh giá sản phẩm</a></li>
+	             -->
+	        </ul>
+	        <!--end tabbar-->
+	        <!--begin story-->
+	        <div class="story tab-content component bleft">
+	            <input type="hidden" value="{id}" id="product_detail_id" />
+	        	<!--begin featured-->
+	            <div id="featured-1">
+	                {description}               
+	            </div>
+	            <!--end featured-->
+	            <!--begin featured-->
+	            <div class="hide" id="featured-2" style="position: relative; top: 0px; left: 0px; display: none;">
+	            	<table cellspacing="0" cellpadding="0" class="table">
+	                    <tbody>
+	                        {specifications}
+	                    </tbody>
+	                </table>
+	            </div>
+	            <!--end featured-->
+	            <!--begin featured-->
+	            <div class="hide" id="featured-3" style="position: relative; top: 0px; left: 0px; display: none;">
+	                <div id="wrap_comment">
+	                {none_comment}
+	                <!-- BEGIN: comment -->
+	                <div class="comment">
+	                    <p class="info"><b>{username}</b> <span>({date})</span></p>
+	                    <div class="sprite"><p class="status clearfix">{content}</p></div>
+	                </div>
+	                <!-- END: comment -->
+	                </div>
+	                
+	                <!--end comment-->
+	                <!--begin comment form-->
+	                <div class="comment-form clearfix">
+	                    <form method="get" action="{link_home}ajax.php?action=comment_product">
+	                        <ul>
+	                            <li><label for="name">Nhập tên</label><span><input type="text" class="name" id="comment_username" /></span></li>
+	                            <li><textarea onfocus="this.value='';" onblur="if(this.value==''){this.value='Gửi ý kiến của bạn...'};" id="comment_content">Gửi ý kiến của bạn...</textarea></li>
+	                            <li style="display: none; color: red; font-style: italic;" id="alert_msg">Mã xác nhận chưa đúng, xin mời thử lại</li>
+	                            <li>
+	                                <img src="{link_home}captcha.php?width=50&height=23&characters=3" id="captcha" />
+	                                <a href="javascript: reloadCapcha('captcha')"><img src="{skin_path}img/reload.gif" id="reload-captcha" /></a>
+	                                <input type="text" id="comment_captcha" value="" style="padding: 2px;" />
+	                                <input type="button" class="submit" value="Gửi" onclick="_comment({id})" />
+	                            </li>
+	                        </ul>
+	                    </form>
+	                </div>
+	                <p>&nbsp;</p>
+	                <p>&nbsp;</p>
+	                <!--end comment form-->
+	            </div>
+	            <!--end featured-->
+	        </div>
+	        <div class="fb-comments" data-href="{cur_link}" data-num-posts="2" data-width="700"></div>
+	        <!--end story-->
+	    </div>
+	    <!--end primary content-->
+	    <!--begin secondary content-->
+	    <div id="block-samecate">
+	        <!--begin pod-->
+	        <div class="pod clearfix">
+	            <h2 class="same-cate">Sản phẩm cùng danh mục</h2>
+	            <ul>
+	                <!-- BEGIN: other_product -->
+	                <li class="clearfix {class}">
+	                    <a href="{link_other}"><img alt="" src="{thumb_other}" />{name_other}</a>
+	                </li>
+	                <!-- END: other_product -->
+	            </ul>
+	            <!-- 
+	            <a href="{link_more}" class="more"><span>Xem thêm</span></a>
+	             -->
+	        </div>
+	        <!--end pod-->
+	        
+	        <div class="pod clearfix" style="display: {none_newlienquan};">
+	            <h2><a href="javascript:void(0)">Tin tức liên quan</a></h2>
+	            <ul class="news">
+	                <!-- BEGIN: news -->
+	                <li><a href="{link_detail_lienquan}">{title_lienquan}</a></li>
+	                <!-- END: news -->
+	            </ul>
+	        </div>
+	        
+	    </div>
+	    <!--end secondary content-->
+    </form>
+    <!--end essential form-->
+    
+</div>
+<!-- END: main -->
+
+
+
+
+
+
+
+

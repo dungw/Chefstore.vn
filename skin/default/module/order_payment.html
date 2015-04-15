@@ -1,0 +1,72 @@
+<!-- BEGIN: main -->
+<div class="essential clearfix">
+	<h1 align="center">Chọn phương thức thanh toán</h1>
+    <p>Xem thêm thông tin <a href="{link_guide}">hướng dẫn đặt mua hàng</a> và <a href="{link_payment_type}">hình thức thanh toán</a> dành cho bạn</p>
+    <p>Nếu bạn cần trợ giúp về đặt mua hàng. Xin vui lòng gọi tới số điện thoại <strong>{hotline}</strong> (Hỗ trợ 24/7)</p>
+    <!--begin form-->
+    <form id="form" class="payment-methods clearfix" name="billingform" method="post" action="{link_home}ajax.php">
+    <input type="hidden" name="cmd" value="update_payment" />
+    <input type="hidden" name="order_id" value="{order_id}" />
+        <li class="clearfix">
+        	<label for="cod">
+            	<input type="radio" name="payment_type" value="Tại nhà" checked="" />
+                <span><b>Giao hàng thu tiền tại nhà (COD)</b></span>
+            </label>
+        </li>        
+        <li class="clearfix">
+        	<label for="baokim">
+            	<input type="radio" name="payment_type" value="BaoKim"  />
+                <img alt="baokim" src="{skin_path}demo/baokim.png" />
+                <span><b>Thanh toán qua <a href="https://www.baokim.vn/">BaoKim.vn</a></b></span>
+                <span>Chủ tài khoản: <strong>Nguyễn Đức Hạnh</strong></span>
+            </label>
+        </li>
+        
+        <li class="clearfix">
+        	<label for="nganluong">
+            	<input type="radio" name="payment_type" value="NganLuong" />
+                <img alt="nganluong" src="{skin_path}demo/nganluong.gif" />
+                <span><b>Thanh toán qua <a href="https://www.nganluong.vn/">NganLuong.vn</a></b></span>
+                <span>Chủ tài khoản: <strong>Nguyễn Đức Hạnh</strong></span>
+            </label>
+        </li>
+        <!-- BEGIN: bank -->
+        <li class="clearfix">
+        	<label for="baokim">
+            	<input type="radio" name="payment_type" id="{id}" value="{name}" />
+                <img alt="baokim" src="{img}" />
+                <span><b>Thanh toán qua {name}</b></span>
+                <span>{chutk}</span>
+                <span>{stk}</span>
+            </label>
+        </li>
+        <!-- END: bank -->
+        <label class="error mtop" style="display: none;" id="alert_msg_payment">Bạn chưa chọn phương thức thanh toán</label>
+        <input type="submit" class="submit mtop" value="Đặt hàng" onclick="return checkPayment()" />
+    </form>
+    <!--end form-->
+</div>
+<script type="text/javascript">
+link_nl = "{link_nl}";
+link_bk = "{link_bk}";
+
+function checkPayment(){
+    
+    var payment_type = $("input[name='payment_type']:checked").val();    
+    if(payment_type == "BaoKim"){        
+        window.location.href = link_bk;
+        return false;
+    }
+    if(payment_type == "NganLuong"){        
+        window.location.href = link_nl;
+        return false;
+    }
+    
+    if(payment_type=='' || payment_type=='undentify'){
+        $("#alert_msg_payment").show();
+        return false;
+    }
+}
+
+</script>
+<!-- END: main -->

@@ -1,0 +1,54 @@
+<!-- BEGIN: main -->
+
+<ul class="promo clearfix" style="display: none;">
+    <!-- BEGIN: promo -->
+    <li {class}>
+        <!--<span class="sales">sales</span>-->
+        <a href="{link_promo}">
+            <img src="{img_promo}" alt="{name_promo}" width="200" />
+            <span>{name_promo}</span>
+        </a>
+        <span class="price">Giá: <b>{price_promo} {price_type}</b></span>
+    </li>
+    <!-- END: promo -->
+</ul>
+
+
+<!-- BEGIN: banner -->
+<div class="ads clearfix">
+    <img src="{img}" alt="{name}" title="{name}" />
+</div>
+<!-- END: banner -->
+
+<!-- BEGIN: category -->
+<div class="component" style="display: {dpl};">
+    <a class="more" href="{link_category}"><span>Xem thêm</span></a>
+    <h2><a href="{link_category}">{name_category} ({num})</a></h2>
+    <ul class="grid first clearfix">
+        {none}
+        <!-- BEGIN: product -->        
+        <li {style_class}>
+            {product_type_html}
+            <a href="{product_link}">
+                <img src="{product_thumb}" alt="{product_name}" />
+                <span>{product_name}</span>
+            </a>
+            <span class="price">Giá: <b>{product_price} {price_type}</b></span>
+        </li>
+        <!-- END: product -->
+    </ul>
+    <!--end row-->
+</div>
+<!-- BEGIN: category -->
+
+ <!-- END: main -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

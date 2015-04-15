@@ -1,0 +1,90 @@
+<!-- BEGIN: main -->
+<div>
+    <div>
+        <h2>Đơn hàng mới từ khách hàng</h2>
+        <p>Thông tin khách hàng:</p>
+        <table>
+            <tbody><tr>
+                <td></td>
+                <td>Họ tên</td>
+                <td>:</td>
+                <td>{fullname}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Công ty</td>
+                <td>:</td>
+                <td>{company}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Email</td>
+                <td>:</td>
+                <td><a target="_blank" href="mailto:{email}">{email}</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Điện thoại</td>
+                <td>:</td>
+                <td>{phone}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Ngày tạo</td>
+                <td>:</td>
+                <td>{date_create}</td>
+            </tr>
+        </tbody></table>
+        <p>Nội dung đơn hàng:</p>
+        <table>
+            <tbody><tr>
+                <td></td>
+                <td>Mã đơn hàng</td>
+                <td>:</td>
+                <td>#{code}</td>
+            </tr>
+        </tbody></table>
+        <p></p>
+        <table cellspacing="0" cellpadding="4" style="width:100%">
+            <tbody>
+                <tr>
+                    <td style="text-align:left;font-weight:bold">Sản phẩm</td>
+                    <td style="text-align:right;width:120px;font-weight:bold">Số lượng</td>
+                    <td style="text-align:right;width:200px;font-weight:bold">Tổng tiền</td>
+                </tr>
+                <!-- BEGIN: row -->
+                <tr>
+                    <td style="text-align:left"><a target="_blank" href="{link_product}">{name_product}</a></td>
+                    <td style="text-align:right">{number}</td>
+                    <td style="text-align:right">{price} đ</td>
+                </tr>
+                <!-- END: row -->
+            </tbody>
+        </table>
+        <p></p>
+        <table>
+            <tbody><tr>
+                <td></td>
+                <td style="width:250px">Tổng tiền</td>
+                <td>:</td>
+                <td>{total_price} đ</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Phương thức vận chuyển</td>
+                <td>:</td>
+                <td>{vanchuyen} (0 đ)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Thành tiền</td>
+                <td>:</td>
+                <td>{final_price} đ</td>
+            </tr>
+        </tbody></table>
+        <hr />
+        <p><strong>{website}</strong></p>
+        <p><a target="_blank" href="{link_website}">{link_website}<wbr></wbr>com/</a></p>
+    </div> 
+</div>
+<!-- END: main -->

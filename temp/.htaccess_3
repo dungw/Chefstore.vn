@@ -1,0 +1,87 @@
+AddType text/x-component .htc
+options -indexes
+Options +FollowSymLinks
+RewriteEngine On
+Header unset Pragma
+FileETag None
+Header unset ETag
+ 
+# cache images/pdf docs for 10 days
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=864000, public, must-revalidate"
+Header unset Last-Modified
+</FilesMatch>
+
+# Compress JavaScript and style-sheet files
+<IfModule mod_deflate.c>
+<FilesMatch "\.(js|css|jpg|jpeg|gif)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+</IfModule>
+
+# rewrite page: chaugiangtext.com/news.html -> index.php?page=news
+ RewriteEngine on
+ 
+ # Aboutus
+ RewriteRule ^aboutus/([0-9]+)-([^/\.]+).html$ index.php?page=aboutus&id=$1&name=$2 [L]
+ 
+ #lien he
+ RewriteRule ^lien-he$ index.php?page=contact
+ RewriteRule ^huong-dan$ index.php?page=news_detail&id=12
+ RewriteRule ^tin-tuc$ index.php?page=news&cid=46
+ RewriteRule ^tin-tuc/([0-9]+)/([^/\.]+).html$ index.php?page=news&cnid=$1
+ 
+ #rss
+ RewriteRule ^rss$ index.php?page=rss
+ RewriteRule ^feed$ index.php?page=feed
+ RewriteRule ^list-all$ index.php?page=sitemap&sitemap=1
+ 
+ 
+ #page
+ RewriteRule ^([^/\.]+)$ index.php?page=$1 [L]
+ RewriteRule ^([^/\.]+).html$ index.php?page=$1 [L]  
+ RewriteRule ^([^/\.]+).html&p=([0-9]+)$ index.php?page=$1&p=$2 [L]
+ 
+  
+ #library
+ RewriteRule ^library/([^/\.]+)_([0-9]+).html$ index.php?page=library&cid=$2&name=$1 [L]
+ RewriteRule ^library/([^/\.]+)_([0-9]+).html&p=([0-9]+)$ index.php?page=library&cid=$2&name=$1&p=$3 [L]
+ 
+ #product
+ RewriteRule ^san-pham/san-pham-moi.html$ index.php?page=product&type=new [L]
+ RewriteRule ^san-pham/san-pham-moi.html&cid=([0-9]+)$ index.php?page=product&type=new&cid=$1 [L]
+ RewriteRule ^san-pham/san-pham-moi.html&cid=([0-9]+)&p=([0-9]+)$ index.php?page=product&type=new&cid=$1&p=$2 [L]
+ 
+ RewriteRule ^san-pham/san-pham-giam-gia.html$ index.php?page=product&type=discount [L]
+ RewriteRule ^san-pham/san-pham-giam-gia.html&cid=([0-9]+)$ index.php?page=product&type=discount&cid=$1 [L]
+ RewriteRule ^san-pham/san-pham-giam-gia.html&cid=([0-9]+)&p=([0-9]+)$ index.php?page=product&type=discount&cid=$1&p=$2 [L]
+ 
+ RewriteRule ^san-pham/san-pham-ban-chay.html$ index.php?page=product&type=bestsell [L]
+ RewriteRule ^san-pham/san-pham-ban-chay.html&cid=([0-9]+)$ index.php?page=product&type=bestsell&cid=$1 [L]
+ RewriteRule ^san-pham/san-pham-ban-chay.html&cid=([0-9]+)&p=([0-9]+)$ index.php?page=product&type=bestsell&cid=$1&p=$2 [L]
+ 
+ RewriteRule ^san-pham/san-pham-khuyen-mai.html$ index.php?page=product&type=saleoff [L]
+ RewriteRule ^san-pham/san-pham-khuyen-mai.html&cid=([0-9]+)$ index.php?page=product&type=saleoff&cid=$1 [L]
+ RewriteRule ^san-pham/san-pham-khuyen-mai.html&cid=([0-9]+)&p=([0-9]+)$ index.php?page=product&type=saleoff&cid=$1&p=$2 [L]
+ 
+ RewriteRule ^san-pham/([0-9]+)/([^/\.]+).html$ index.php?page=product&cid=$1&name=$2 [L]
+ RewriteRule ^san-pham/([0-9]+)/([^/\.]+).html&sort=([^/\.]+)$ index.php?page=product&cid=$1&name=$2&sort=$3 [L]
+ RewriteRule ^san-pham/([0-9]+)/([^/\.]+).html&p=([0-9]+)$ index.php?page=product&cid=$1&name=$2&p=$3 [L] 
+ RewriteRule ^san-pham/([0-9]+)/([^/\.]+).html&sort=([^/\.]+)&p=([0-9]+)$ index.php?page=product&cid=$1&name=$2&sort=$3&p=$4 [L]
+ 
+ 
+ RewriteRule ^product/([^/\.]+)_([0-9]+).html$ index.php?page=product&cid=$2&name=$1 [L]
+ RewriteRule ^product/([^/\.]+)_([0-9]+).html&sort=([^/\.]+)$ index.php?page=product&cid=$2&name=$1&sort=$3 [L]
+ RewriteRule ^product/([^/\.]+)_([0-9]+).html&p=([0-9]+)$ index.php?page=product&cid=$2&name=$1&p=$3 [L] 
+ RewriteRule ^product/([^/\.]+)_([0-9]+).html&sort=([^/\.]+)&p=([0-9]+)$ index.php?page=product&cid=$2&name=$1&sort=$3&p=$4 [L]
+ RewriteRule ^san-pham/([0-9]+)-([^/\.]+).html$ index.php?page=product_detail&id=$1&name=$2 [L]
+ 
+ #news
+ RewriteRule ^tin-tuc/([^/\.]+)_([0-9]+).html$ index.php?page=news&cid=$2&name=$1 [L]
+ RewriteRule ^tin-tuc/([^/\.]+)_([0-9]+).html&p=([0-9]+)$ index.php?page=news&cid=$2&name=$1&p=$3 [L]
+ RewriteRule ^([^/\.]+)/([0-9]+)-([^/\.]+).html$ index.php?page=news_detail&id=$2&title=$3 [L]
+ 
+ 
+
+
+

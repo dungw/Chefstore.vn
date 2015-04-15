@@ -1,0 +1,120 @@
+<script type="text/javascript" src="http://chefstore.vn/skin/default/js/jquery.validate.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery("#form").validate({
+    	onsubmit: true,
+        rules: {
+        	name: {
+                required: true
+            },
+            email: {
+            	required: true,
+                email: true
+            },
+            address: {
+                required: true
+            },
+            phone: {
+                required: true
+            }
+        },
+        messages: {
+        	name: {
+                required: "Bạn chưa điền họ tên"
+            },
+            email: {
+            	required: "Bạn chưa điền email",
+                email: "Email chưa đúng định dạng"
+            },
+            address: {
+                required: "Bạn chưa điền địa chỉ"
+            },
+            phone: {
+                required: "Bạn chưa điền số điện thoại"
+            }
+        }
+    });
+});
+</script>
+
+<div class="story component">
+	
+	<div class="new-pathway">
+		<!-- 
+		<div class="path-navi">
+			<a href="http://chefstore.vn/">Home</a>
+			<span>&nbsp&nbsp|&nbsp&nbsp</span>
+			<a href="">Liên hệ</a>
+		</div>
+		 -->
+		<h1 class="cate-name">
+			<a href="javascript:void(0)">Liên hệ</a>
+		</h1>
+	</div>
+	
+    <p>Số 40/2 Vương thừa Vũ, Thanh xuân, Hà nội</p>
+    <p>Hotline: Tel:(04) 66 818 777 
+Mobi 1: 0977 58 6363
+Mobi 2: 01699 896 832</p>
+    <p>Website: http://www.chefstore.vn</p>
+    <p>Email: hoantt@chefstore.vn Hoặc: Sales@chefstore.vn</p>
+    <h3>Nhập vào form dưới đây để gửi thông tin cho chúng tôi</h3>
+    <!-- 
+    <p>Chúng tôi đánh giá cao thông tin phản hồi của bạn! Mục tiêu của chúng tôi là tiếp tục cải thiện "<a href="http://chefstore.vn/">dex.vn</a>" dựa trên những ý kiến đóng góp của bạn. Xin vui lòng cho chúng tôi biết những đánh giá của bạn để chúng tôi có thể phục vụ bạn tốt hơn. Xin chân thành cảm ơn!</p>
+     -->
+    <!--begin form-->
+    <form id="form" name="contact" method="post" action="http://chefstore.vn/ajax.php">
+        <input type="hidden" name="cmd" value="contact" />
+    	<fieldset>
+            
+            <table width="100%">
+            	<tr>
+            		<td width="80">
+            			<label for="name">Họ và tên:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required" name="fulname" id="fulname" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="phone">Số điện thoại:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required number" name="phone" id="phone" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="email">Email:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" class="input required email" name="email" id="email" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<label for="add">Địa chỉ:<font color="red">*</font></label>
+            		</td>
+            		<td>
+            			<input type="text" placeholder="VD: số 107 Hoàng Văn Thái, Thanh Xuân, Hà Nội" class="input required add" name="address" id="address" />
+            		</td>
+            	</tr>
+            	<tr>
+            		<td></td>
+            		<td>
+            			<textarea placeholder="Lời nhắn cho chúng tôi ..." name="content" rows="8" cols="97"></textarea>
+            		</td>
+            	</tr>
+            	<tr>
+            		<td></td>
+            		<td class="last" align="left" colspan="1">
+            			<span><font color="red">*</font>&nbspThông tin bắt buộc</span>
+            			<input type="submit" class="new-submit-vi" value="" />
+           			</td>
+            	</tr>
+            </table>
+        </fieldset>
+    </form>
+    <!--end form-->
+</div>

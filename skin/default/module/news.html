@@ -1,0 +1,27 @@
+<!-- BEGIN: main -->
+<div class="component">
+    <div class="new-pathway">
+    	<!-- 
+		<div class="path-navi">
+			<a href="{link_home}">Trang chủ</a>
+			<span>&nbsp&nbsp|&nbsp&nbsp</span>
+			<a href="">Tin tức</a>
+		</div>
+		 -->
+		<h1 class="cate-name">
+			<a href="javascript:void(0)">{category_name}</a>
+		</h1>
+	</div>
+    <!--begin list news-->
+    <ul class="list-news">
+        <!-- BEGIN: news -->
+         <li>
+        	<a href="{link_detail}">{img}{title}</a>
+            <span>{brief}</span>
+        </li>
+        <!-- END: news -->
+    </ul>
+    <!--end list news-->
+</div>
+{pagging}
+<!-- END: main -->

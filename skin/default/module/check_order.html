@@ -1,0 +1,47 @@
+<!-- BEGIN: main -->
+<div class="container clearfix">
+	<!--begin essential-->
+    <div class="essential clearfix">
+    	<h1>Kiểm tra đơn hàng</h1>
+        <p>Nếu bạn cần trợ giúp về đặt mua hàng. Xin vui lòng gọi tới số điện thoại {hotline1} (Hỗ trợ 24/7)</p>
+        <form id="form" method="post" action="{link_check_order}">
+            <li>
+            	<label for="mobile">Nhập số điện thoại của bạn để kiểm tra tình trạng đơn hàng</label>
+                <input type="text" class="input {error}" id="mobile" name="phone" />
+                {warning}
+            </li>
+            <li><input type="submit" class="submit" value="Xem đơn hàng" /></li>
+            <table width="100" cellspacing="0" cellpadding="0" border="0" style="display: {display};">
+                <tbody>
+                    <tr>
+                        <th class="col1">STT</th>
+                        <th class="col2">Thông tin sản phẩm</th>
+                        <th class="col3">Đơn giá (VNĐ)</th>
+                        <th class="col4">Số lượng</th>
+                        <th class="col5">Tổng tiền (VNĐ)</th>
+                        <th class="col6">Tình trạng</th>
+                    </tr>
+                    <!-- BEGIN: row -->
+                    <tr>
+                        <td class="col1">{stt}</td>
+                        <td class="col2">
+                            <a href="{product_link}" target="_blank"><img alt="uyx" src="{thumb}" /></a>
+                            <p>{product_name}</p>
+                        </td>
+                        <td class="col3">{product_price}</td>
+                        <td class="col4">{num}</td>
+                        <td class="col5">{total_price}</td>
+                        <td class="col6">{status}</td>
+                    </tr>
+                    <!-- END: row -->
+                    <tr class="total">
+                        <td class="sub" colspan="4">Tổng cộng tiền hàng</td>
+                        <td colspan="2"><b>{all_price}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <!--end essential-->
+</div>
+<!-- END: main -->

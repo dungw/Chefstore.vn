@@ -1,0 +1,27 @@
+<!-- BEGIN: main -->
+<div id="main" class="clearfix">
+    <div class="wrap-logo">
+    	<h1>
+    		<a class="logo" href="{link_home}" title="chefstore.vn">chefstore.vn</a>
+   		</h1>
+    </div>
+    <!--begin search-->
+    <div class="wrap-header-right" align="right">
+    	<form name="search" action="{link_home}index.php" method="get">
+            <input type="hidden" name="page" value="product" />
+            <input type="hidden" name="type" value="search" />
+            <div>
+            	<input class="keyword" type="text" maxlength="90" name="keyword" placeholder="{lb_search}" class="input-text" />
+	            <input class="submit" type="submit" value="" />
+            </div>
+        </form>
+        <script type="text/javascript" src="/skin/default/js/functions.js"></script>
+        <span onclick="showLang('en')" class="{lang_active_en} lang en">{lang_en}</span>
+        <span onclick="showLang('vi')" class="{lang_active_vi} lang vn">{lang_vi}</span>
+        <!-- 
+        <a class="lang-vn language {active_vi}" onclick="showLang('vi')" href="javascript:void(0)"> Tiếng Việt </a>
+		<a class="lang-en language {active_en}" onclick="showLang('en')" href="javascript:void(0)"> English </a>
+		 -->
+    </div>
+</div>
+<!-- END: main -->

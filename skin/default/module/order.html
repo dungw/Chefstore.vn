@@ -1,0 +1,139 @@
+<!-- BEGIN: main -->
+<script type="text/javascript" src="{skin_path}js/jquery.validate.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#form").validate({
+        rules: {
+            /*
+            billing: {
+              min: 1
+            },
+            */
+            tax_code : {
+                minlength: 10
+            },
+            phone : {
+                minlength: 8
+            },
+            mobile : {
+                minlength: 10
+            },
+            email : {
+                email: true
+            }
+            
+        },
+        messages: {
+            /*
+            billing : {
+                min: "Bạn chưa chọn phương thức thanh toán" 
+            },
+            */
+            fullname : {
+                required: "Bạn chưa nhập Họ và Tên"
+            },
+                     
+            address : {
+                required: "Bạn chưa nhập địa chỉ"
+            },
+            email: {
+                required: "Bạn chưa nhập Email",
+                email: "Email bạn nhập không đúng"     
+            },
+            phone: {
+                required: "Bạn chưa nhập số điện thoại",
+                number: "Số điện thoại không đúng",
+                minlength: jQuery.format("Số điện thoại phải có ít nhất 8 ký tự!"),
+            }
+        }
+    });
+});
+
+
+function changebilling(){
+    _bid= $("#billing").val();
+    if(_bid==2){
+        $("input").attr('disable','true');
+        _link_nl = $("#link_nl").val();
+        window.location= _link_nl;
+    }
+    if(_bid==3){
+        $("input").attr('disable','disable');
+        _link_bk = $("#link_bk").val();
+        window.location= _link_bk;
+    }
+}
+</script>
+<div class="container clearfix">
+	<!--begin essential-->
+    <div class="essential clearfix">
+    	<h1 align="center">Thông tin thanh toán và chuyển hàng</h1>
+        <ul>
+        	<li>+ Xem thêm thông tin <a href="{link_guide}">hướng dẫn đặt mua hàng</a> và <a href="{link_payment_type}">hình thức thanh toán</a> dành cho bạn</li>
+        	<li>+ Hãy điền đầy đủ các thông tin sau để đặt mua các sản phẩm trong giỏ hàng của bạn (đây là thông tin để chuyển hàng, xin vui lòng nhập chính xác)</li>
+            <li>+ Nếu bạn cần trợ giúp về đặt mua hàng. Xin vui lòng gọi tới số điện thoại {hotline1} (Hỗ trợ 24/7)</li>
+            <li>+ Dấu * là thông tin bắt buộc.</li>
+        </ul>
+        <!--begin form-->
+        <form id="form" class="billingform clearfix" name="billingform" method="post" action="{link_home}ajax.php">
+            <input type="hidden" name="cmd" value="order" />
+            <input type="hidden" name="link_nl" id="link_nl" value="{link_nl}" />
+            <input type="hidden" name="link_bk" id="link_bk" value="{link_bk}" />
+            <!--
+            <li>
+                <label for="billing">Hình thức thanh toán <span class="required">*</span></label>
+                <select class="select required" id="billing" name="billing" id="billing" onchange="changebilling()">
+                    <option value="0">Chọn một hình thức thanh toán</option>
+                    <option value="1">Giao hàng thanh toán tiền</option>
+                    <option value="2">Thanh toán qua Ngân Lượng</option>
+                    <option value="3">Thanh toán qua Bảo Kim</option>
+                    <option value="4">Chuyển khoản qua Ngân hàng</option>
+                </select>
+            </li>
+            -->
+            <div class="left">
+                <li>
+                    <label for="name">Họ và Tên <span class="required">*</span></label>
+                    <input type="text" class="input required" id="fullname" name="fullname" />
+                </li>
+                <li>
+                    <label for="company">Công ty</label>
+                    <input type="text" class="input" id="company" name="company" />
+                </li>
+                <li>
+                    <label for="mst">Mã số thuế</label>
+                    <input type="text" class="input" id="tax_code" name="tax_code" />
+                </li>
+                <li>
+                    <label for="add">Địa chỉ thanh toán <span class="required">*</span></label>
+                    <input type="text" class="input required" id="address" name="address" />
+                </li>
+                <li>
+                    <label for="phone">Điện thoại <span class="required">*</span></label>
+                    <input type="text" class="input required" id="phone" name="phone" />
+                </li>
+            </div>
+            <div class="right">
+                <li>
+                    <label for="mobile">Di động</label>
+                    <input type="text" class="input" id="mobile" name="mobile" />
+                </li>
+                <li>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="text" class="input required" id="email" name="email" />
+                </li>
+                <li>
+                    <label for="notes">Yêu cầu riêng</label>
+                    <textarea class="textbox" id="notes" name="notes" cols="33" rows="5"></textarea>
+                </li>
+                <li>
+                    <input type="submit" class="submit" value="Đặt hàng" />
+                    <input type="reset" class="submit" value="Sửa lại" />
+                </li>
+            </div>
+        </form>
+        <!--end form-->
+    </div>
+    <!--end essential-->
+</div>
+<!-- END: main -->
