@@ -29,7 +29,7 @@ SetOutputFilter DEFLATE
  RewriteRule ^lien-he$ index.php?page=contact
  RewriteRule ^huong-dan$ index.php?page=news_detail&id=12
  RewriteRule ^tin-tuc$ index.php?page=news&cid=46
- RewriteRule ^tin-tuc/([0-9]+)/([^/\.]+).html$ index.php?page=news&cnid=$1
+ RewriteRule ^tin-tuc/([0-9]+)/([^/\.]+).html(&p=[0-9]+)?$ index.php?page=news&cnid=$1&p=$3
  
  #rss
  RewriteRule ^rss$ index.php?page=rss

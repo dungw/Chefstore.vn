@@ -84,11 +84,11 @@
 /*////////////////////////LAYOUT/////////////////////////////////*/
 #shell{width:990px; margin:0 auto;}
 #shell #enquiry{display:none;}
-#content,#primary_content,#secondary_content,.story,.column{position:relative; overflow:hidden;}
+#content,#primary_content,#secondary_content,.story,.column{position:relative;}
 #content{ padding-bottom:30px;}
 
 #content #primary_content,#content #secondary_content,.essential{  }
-#content .pod{ position:relative; }
+/*#content .pod{ position:relative; }*/
 #content .last{ padding-bottom:0 !important; border-bottom:0 !important;}
 #content .pod h1,#content .component h1,#enquiry h1{ font-weight:700 !important; padding:15px 0; text-align:left; display:block; font-size:18px;}
 #content .pod h2,#content .component h2{ }
@@ -116,7 +116,7 @@
 .yahoo,.skype{ margin-right:5px;}
 .ads{ text-align:center !important;}
 /*//////////////////////////PROMOS////////////////////////////////*/
-#content #primary_content{width: 788px; padding-bottom:15px; float: right; display:inline; background:#fff;padding-left: 2px;}
+#content #primary_content{width: 788px; padding-bottom:15px; float: right; display:inline; background:#fff;}
 #content #primary_content .component{ padding:0 0 10px 0; position:relative;}
 #content #primary_content .component h2{padding:10px 0 0;}
 #content #primary_content .filter{ padding:10px; border-bottom:1px dotted #CFCFCF;}
@@ -164,7 +164,7 @@
 
 #content #secondary_content .news li{ background:url("../img/bullet.png") no-repeat left 5px; margin:5px 0; padding:0 0 0 12px !important; height:100%;}
 #content #secondary_content .ads p{ font-size:10px !important; color:#999; padding:0 15px !important;}
-#content #secondary_content{ width: 190px; float: left; display:inline; text-align:left; background:#fff;padding-right: 4px;}
+#content #secondary_content{ width: 202px; float: left; display:inline; text-align:left; background:#fff;padding-right: 0px;}
 #content #secondary_content .pod ul li img{ width:80px;}
 .component .header{ color:#FFF; background:#505050 url("../images/title_bgs.gif") repeat-x scroll 0 50%; font-weight:bold; font-size:110%; padding:4px 10px !important; position:relative;}
 .component .header a{ color:#FFF;}

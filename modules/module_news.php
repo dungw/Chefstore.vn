@@ -42,6 +42,7 @@ class module_news extends Module{
         
         $miniNews->num_per_page = 12;        
         $p = CInput::get('p','int',1);
+
         $total_row = $miniNews->count($con);    
         $total_page = ceil($total_row/$miniNews->num_per_page);
         $pagging = pagging($p,$total_page,curPageURL());

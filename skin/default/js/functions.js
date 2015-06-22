@@ -1,5 +1,33 @@
 var base_url = 'http://chefstore.vn/';
 
+$(document).ready(function()
+{
+
+    $('.menu-category li .link').hover(function() {
+
+        var id = $(this).attr('id');
+        $('.wrap-sub-menu').each(function() {
+            if ($(this).hasClass('show')) {
+                $(this).removeClass('show');
+            }
+        });
+        $('#sub-' + id).addClass('show');
+
+    }, function() {
+
+        var id = $(this).attr('id');
+        $('#sub-' + id).hover(function() {
+            $(this).addClass('show');
+        }, function() {
+            $(this).removeClass('show');
+        });
+
+        $('#sub-' + id).removeClass('show');
+
+    });
+
+});
+
 function show_alert_msg(_msg){
     $("#alert_msg").html(_msg).show();
 }

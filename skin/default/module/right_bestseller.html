@@ -1,11 +1,45 @@
 <!-- BEGIN: main -->
 <div class="wrap-our-category pod clearfix">
-	<a href="/" class="i-home">{lb_home}</a>
+    <a href="/" class="i-home">{lb_home}</a>
     <h3 class="our-category">{lb_our_product}</h3>
     <ul class="menu-category">
         <!-- BEGIN: row -->
-        <li class="clearfix {active}">
-            <a href="{link}">{name}</a>
+        <li class="li-cate clearfix {active} {is_parent}">
+
+            <a href="{link}" id="{parent_id}" class="link">{name}</a>
+
+            <div class="wrap-sub-menu" id="sub-{parent_id}">
+                <table width="100%">
+
+                    <tr>
+                        <!-- BEGIN: sub -->
+                        {divide}
+                        <td width="50%">
+                            <a class="{sub.active} sub" href="{sub.link}">{sub.name}</a>
+                            <ul class="sub-menu">
+
+                                <!-- BEGIN: unit -->
+                                <li class="{unit.active} sub-menu-item">
+                                    <a class="unit" href="{unit.link}">{unit.name}</a>
+                                </li>
+
+                                    <!-- BEGIN: smallest -->
+                                    <li class="smallest {smallest.active} sub-menu-item">
+                                        <a class="smallest" href="{smallest.link}">{smallest.name}</a>
+                                    </li>
+                                    <!-- END: smallest -->
+
+                                <!-- END: unit -->
+
+                            </ul>
+                        </td>
+                        <!-- END: sub -->
+                    </tr>
+
+                </table>
+
+            </div>
+
         </li>
         <!-- END: row -->
     </ul>

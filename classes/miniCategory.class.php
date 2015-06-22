@@ -101,7 +101,7 @@ class miniCategory extends Base{
 	            }
 	        }
 		}
-        
+//        print '<pre>'; print_r($arrCategoryType); die;
         return $arrCategoryType;        
     }
     
